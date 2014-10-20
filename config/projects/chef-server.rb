@@ -14,6 +14,7 @@ override :berkshelf2, version: "2.0.18"
 override :rabbitmq, version: "3.3.4"
 override :erlang, version: "R16B03-1"
 override :'omnibus-ctl', version: "0.3.0"
+override :cacerts, version: '2014.08.20'
 
 # creates required build directories
 dependency "preparation"
