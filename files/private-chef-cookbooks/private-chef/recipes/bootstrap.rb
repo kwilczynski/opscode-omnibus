@@ -17,8 +17,8 @@ if (!OmnibusHelper.has_been_bootstrapped? &&
   include_recipe "private-chef::add_ons_wrapper"
 end
 
-opscode_test_dir = "/opt/opscode/embedded/service/opscode-test"
-opscode_test_config_dir = "/opt/opscode/embedded/service/opscode-test/bootstrapper-config"
+opscode_test_dir = "/opt/opscode/embedded/service/chef-server-bootstrap"
+opscode_test_config_dir = "/opt/opscode/embedded/service/chef-server-bootstrap/bootstrapper-config"
 
 template File.join(opscode_test_config_dir, "config.rb") do
   source "bootstrap-config.rb.erb"
