@@ -44,7 +44,7 @@ execute "/opt/opscode/bin/private-chef-ctl start" do
 end
 
 execute "bootstrap-platform" do
-  command "bash -c 'echo y | /opt/opscode/embedded/bin/bundle exec ./bin/bootstrap-platform -c ./bootstrapper-config/config.rb -s ./bootstrapper-config/script.rb'"
+  command "/opt/opscode/embedded/bin/bundle exec ./bin/bootstrap-platform ./bootstrapper-config/config.rb ./bootstrapper-config/script.rb"
   cwd opscode_test_dir
   not_if { OmnibusHelper.has_been_bootstrapped? }
   notifies :restart, 'service[opscode-erchef]'
